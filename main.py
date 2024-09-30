@@ -1,7 +1,8 @@
 import google.generativeai as genai
 import speech
+import os
 
-genai.configure(api_key="AIzaSyDsTRGDDe-5LIO0j_4RjlklOUEyxZCxGXQ")
+genai.configure(api_key=os.environ.get("GEMINI_API"))
 
 model = genai.GenerativeModel(model_name="gemini-1.5-flash")
 chat = model.start_chat(history=[])
